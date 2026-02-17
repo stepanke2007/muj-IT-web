@@ -1,4 +1,9 @@
-// Načtení dat z profile.json
+/**
+ * Osobní IT Profil 2.0
+ * Dynamické načítání dat z profile.json a vykreslení na stránku
+ */
+
+// Fetch data z profile.json
 fetch('profile.json')
   .then(response => {
     if (!response.ok) {
@@ -7,10 +12,10 @@ fetch('profile.json')
     return response.json();
   })
   .then(data => {
-    // Vložení jména do h1
+    // 1. Vložení jména do h1
     document.getElementById('name').textContent = data.name;
 
-    // Vygenerování seznamu dovedností
+    // 2. Vygenerování seznamu dovedností
     const skillsList = document.getElementById('skills');
     data.skills.forEach(skill => {
       const li = document.createElement('li');
@@ -19,7 +24,7 @@ fetch('profile.json')
       skillsList.appendChild(li);
     });
 
-    // Vygenerování zájmů
+    // 3. Vygenerování zájmů (interests)
     if (data.interests && data.interests.length > 0) {
       const interestsContainer = document.getElementById('interests');
       data.interests.forEach(interest => {
@@ -30,7 +35,7 @@ fetch('profile.json')
       });
     }
 
-    // Vygenerování projektů
+    // 4. Vygenerování projektů (projects)
     if (data.projects && data.projects.length > 0) {
       const projectsContainer = document.getElementById('projects');
       data.projects.forEach(project => {
@@ -56,6 +61,8 @@ fetch('profile.json')
     }
   })
   .catch(error => {
+    // Ošetření chyby při načítánídat
     console.error('Chyba při načítání dat:', error);
     document.getElementById('name').textContent = 'Chyba při načítání profilu';
   });
+
