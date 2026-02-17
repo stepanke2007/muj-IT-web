@@ -1,0 +1,27 @@
+{
+  "name": "Jan Novák",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "GitHub Pages"
+  ],
+  "interests": [
+    "Web development",
+    "Herní grafika",
+    "AI nástroje"
+  ],
+  "projects": [
+    {
+      "title": "Osobní web",
+      "description": "Jednostránkový profil na GitHub Pages s dynamickým obsahem",
+      "link": "https://stepanke2007.github.io/muj-IT-web"
+    },
+    {
+      "title": "Web portfolio",
+      "description": "Sbírka vytvořených webových projektů",
+      "link": "#"
+    }
+  ]
+}
